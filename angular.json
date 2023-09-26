@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-rest-api"
+    }
+  },
+  "defaultProject": "angular-rest-api",
+  "cli": {
+    "analytics": false
+  }
 }

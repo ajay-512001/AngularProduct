@@ -1,0 +1,24 @@
+<p>second-routing-page works!</p>
+
+<section style="top: 10px;">
+<div style="display: flex; flex-direction: column; margin: 10px;">
+    <div class="form__group field">
+        <input type="input" class="form__field" placeholder="Name" [(ngModel)] ="name"  required="true">
+        <label for="name" class="form__label">Name</label>
+    </div>
+    <div class="form__group field">
+        <input type="number" class="form__field" placeholder="Quantity"  [(ngModel)] ="qunt"  required="true">
+        <label for="name" class="form__label">Quantity</label>
+    </div>
+    <div class="form__group field">
+        <input type="number" class="form__field" placeholder="Price" [(ngModel)] ="price" required="true">
+        <label for="name" class="form__label">Price</label>
+    </div>
+    <br>
+    <!-- <input type="file" name="file" id="file" [(ngModel)] ="file"> -->
+    <button (click)="updateData()" *ngIf="isUpdate == 'true'">update data</button>
+    <button (click)="addData()" *ngIf="isAdd == 'true'">Add data</button>
+    <br>
+    <button (click)="backToFirst()">Back to first</button>    
+</div>
+</section>

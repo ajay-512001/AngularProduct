@@ -1,0 +1,49 @@
+<div style="width: 100%;">
+<div style="display: flex; position: relative; justify-content: center; top: 20px;">
+  <div class="form__group field">
+    <input type="input" class="form__field" (keyup)="findData(name_find)" placeholder="Enter Name" [(ngModel)] ="name_find"  required="true">
+    <label for="name" class="form__label">Enter Name To Find</label>
+  </div>
+<!-- <button class="pointer" style="float: right; margin: 0 10px;" (click)="findData(name_find)">Find Product</button> -->
+<button class="pointer" style="float: right; width: max-content; margin: 0 10px;" (click)="addData()">➕Add Product</button>
+</div>
+<br><br><br>
+<div>
+<div style="margin-right: 10px;">
+</div>
+</div>
+</div>
+
+<section>
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            <th>Sr.</th>
+            <th style="padding-right: 30px;">Update</th>
+            <th style="margin-left: 30px;">View</th>
+            <th style="margin-right: 30px;">Delete</th>
+            <th>Name</th>
+            <th>Qunty</th>
+            <th style="padding-left: 10px;">Price</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tbody *ngFor="let productData of productList">
+            <tr>
+                <td>{{productData.index}}</td>
+                <td class="pointer" (click)="GetDtatUpdate(productData._id)">✏️</td>
+                <td class="pointer" (click)="viewData(productData._id)">👀</td>
+                <td class="pointer" (click)="deleteData(productData._id)">🗑️</td>
+                <td>{{productData.name}}</td>
+                <td style="padding-left: 20px;">{{productData.quantity}}</td>
+                <td style="padding-left: 20px;">{{productData.price}}</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
